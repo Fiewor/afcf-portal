@@ -1,0 +1,64 @@
+@use "../../../styles/base" as *;
+
+.activities {
+  margin: 2rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+
+    .ui.button {
+      background: $main-blue;
+      color: #fff;
+    }
+  }
+
+  &__form {
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    padding: 2rem;
+
+    &__section {
+      padding: 2rem 0;
+    }
+
+    &__button-container {
+      padding: 1rem 0;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+
+      .ui.button:first-of-type {
+        background: $main-blue;
+        color: #fff;
+
+        &:hover {
+          background: #66b5c4;
+        }
+
+        &:active {
+          background: transparent;
+          border: 1px solid $main-blue;
+          color: $main-blue;
+        }
+      }
+
+      .ui.button:last-of-type {
+        background: transparent;
+        border: 1px solid $main-blue;
+        color: $main-blue;
+
+        &:hover {
+          background: #d5f0f5;
+        }
+
+        &:active {
+          background: $main-blue;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@use "../../../styles/base" as *;
+
+.reporting {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  &__left {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    background: $light-blue;
+
+    &__heading {
+      color: $main-blue;
+      font-weight: 600;
+      padding: 2rem 0;
+      font-size: 1.5rem;
+    }
+
+    &__link-container {
+      &__link {
+        font-weight: 500;
+        cursor: pointer;
+
+        &:hover {
+          color: $main-blue;
+        }
+      }
+    }
+  }
+
+  &__right {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+
+    &__header {
+      padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+
+      &__heading {
+        font-weight: 700;
+      }
+    }
+  }
+}

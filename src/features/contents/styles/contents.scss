@@ -1,0 +1,59 @@
+@import "../../../styles/base";
+
+.contents {
+  display: flex;
+  height: 100%;
+
+  &__left {
+    width: 30%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: $light-blue;
+
+    &__upper {
+      &__main-link {
+        color: #000;
+      }
+
+      &__main-text {
+        font-size: 2em;
+        font-weight: 600;
+        padding: 1rem 0;
+      }
+
+      &__page-link {
+        color: $main-blue;
+      }
+    }
+
+    &__lower {
+    }
+  }
+
+  &__right {
+    width: 70%;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__upper {
+      &__header {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem 0;
+      }
+    }
+
+    &__lower {
+      display: flex;
+      gap: 2rem;
+      justify-content: flex-start;
+    }
+  }
+}

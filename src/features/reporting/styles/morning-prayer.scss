@@ -1,0 +1,30 @@
+.morning-prayer-container {
+  padding: 2rem 0;
+
+  .top {
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .notes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #fc3b3b;
+    padding: 1rem 0;
+
+    ul {
+      padding-left: 1.5rem;
+      li {
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    gap: 2rem;
+  }
+}

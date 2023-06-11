@@ -1,0 +1,54 @@
+@use "../../../styles/base" as *;
+
+.excos-history {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 2rem;
+
+  &__header {
+    font-weight: 700;
+  }
+
+  &__form {
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    padding: 2rem;
+
+    &__button-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+
+      .ui.button:first-of-type {
+        background: $main-blue;
+        color: #fff;
+
+        &:hover {
+          background: $light-blue;
+        }
+
+        &:active {
+          background: transparent;
+          border: 1px solid $main-blue;
+          color: $main-blue;
+        }
+      }
+
+      .ui.button:last-of-type {
+        background: transparent;
+        border: 1px solid $main-blue;
+        color: $main-blue;
+
+        &:hover {
+          background: #d5f0f5;
+        }
+
+        &:active {
+          background: $main-blue;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

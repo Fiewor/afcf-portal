@@ -1,0 +1,96 @@
+@use "../../../styles/base" as *;
+
+.ui.form .fields {
+  margin: 0;
+
+  .wide.field {
+    padding-left: 0;
+  }
+}
+
+.reporting-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  &__blessing-container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1rem;
+    padding: 2rem 0;
+
+    &__header {
+      font-weight: 700;
+      font-size: 1.2em;
+    }
+
+    &__group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
+  &__sub-container {
+    padding: 1rem 0;
+    width: 50%;
+
+    &__group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  &__upload {
+    border: 1px solid #afafaf;
+    border-radius: 5px;
+    padding: 2rem;
+    color: $main-blue;
+    width: 40%;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 5%;
+  }
+
+  &__button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1rem 0;
+
+    .ui.button {
+      background: $main-blue;
+      color: #fff;
+
+      &:hover {
+        background: #66b5c4;
+      }
+
+      &:active {
+        background: transparent;
+        border: 1px solid $main-blue;
+        color: $main-blue;
+      }
+
+      &:last-child {
+        background: transparent;
+        border: 1px solid $main-blue;
+        color: $main-blue;
+
+        &:hover {
+          background: #d5f0f5;
+        }
+
+        &:active {
+          background: $main-blue;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

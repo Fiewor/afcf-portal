@@ -1,0 +1,72 @@
+// reset
+.ui.grid > [class*="equal width"].row > .column {
+  display: inherit;
+}
+
+.ui.celled.grid > .column:not(.row),
+.ui.celled.grid > .row > .column {
+  padding: 0;
+}
+
+.main-grid {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 2rem;
+
+  .header {
+    height: max-content;
+
+    &__column {
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .heading {
+        font-weight: 700;
+        width: max-content;
+        margin: 1rem;
+      }
+
+      .content {
+        border: 1px solid #e5e5e5;
+        border-radius: 5px;
+        padding: 1rem;
+        margin: 0 0.5rem;
+      }
+    }
+  }
+
+  .main {
+    height: 80%;
+    flex-grow: 1;
+    margin: 0 2rem;
+
+    &__center {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__side {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &__row {
+        &__cell {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 3rem;
+
+          &__sub-text {
+            font-weight: 700;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}

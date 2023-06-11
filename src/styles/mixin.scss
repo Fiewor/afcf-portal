@@ -1,0 +1,6 @@
+@use "base";
+
+@mixin btn-primary($background) {
+  background: $main-blue;
+  color: #fff;
+}

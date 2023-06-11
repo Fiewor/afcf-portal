@@ -1,0 +1,63 @@
+@use "../../../styles/base" as *;
+
+.ui.grid > .row > .column {
+  .sidebar-main {
+    background: rgba(1, 127, 148, 0.1);
+    height: 100%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__upper-row {
+      &__link-container {
+        &__row {
+          padding: 1rem 0;
+          //     display: flex;
+          //     justify-content: flex-start;
+          //     align-items: center;
+          //   }
+
+          .link {
+            color: black;
+            justify-self: flex-start;
+            font-weight: 900;
+            cursor: pointer;
+
+            &:hover,
+            &:active {
+              color: $main-blue;
+            }
+          }
+        }
+      }
+    }
+
+    &__bottom-row {
+      height: 10vh;
+
+      .circle {
+        background: $main-blue;
+        border-radius: 50%;
+        width: 4rem;
+        height: 4rem;
+      }
+
+      &__column {
+        display: flex;
+        flex-direction: column;
+
+        .text {
+          font-weight: 600;
+        }
+
+        .sub-text {
+        }
+      }
+
+      .line {
+        border: 2px solid $main-blue;
+      }
+    }
+  }
+}
