@@ -1,108 +1,68 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "semantic-ui-react";
 
-import ReportingTable from "./components/ReportingTable";
-import MorningPrayer from "./components/MorningPrayer";
-import ReportingForm from "./components/ReportingForm";
-import { setReportingScreen } from "./slices/reporting";
+import changeToPascalCase from "../../common/utils/changeToPascalCase";
 
 import "./styles/reporting.scss";
+import { setReportingScreen } from "./slices/reporting";
+import ReportingTable from "./components/ReportingTable";
 
 const Reporting = () => {
   const dispatch = useDispatch();
+
   const reportingScreen = useSelector(
     (state) => state.reporting.reportingScreen
   );
 
-  const isSeperatedByHypens = (str) => /-/.test(str);
-
-  const capitalizeFirstLetter = (str) =>
-    str.charAt(0).toUpperCase() + str.slice(1);
-
-  const changeToPascalCase = (str) => {
-    if (isSeperatedByHypens(str)) {
-      return str
-        .split("-")
-        .reduce(
-          (prev, curr) =>
-            `${capitalizeFirstLetter(prev)} ${capitalizeFirstLetter(curr)}`
-        );
-    } else {
-      return capitalizeFirstLetter(str);
-    }
-  };
-
-  const renderScreens = () => {
-    switch (reportingScreen) {
-      case "reporting": {
-        return <ReportingTable />;
-      }
-      case "morning-prayer":
-        return <MorningPrayer />;
-
-      case "bible-study":
-        return <ReportingForm />;
-
-      case "fellowship":
-        return <ReportingForm />;
-
-      case "welcome-program":
-        return <ReportingForm />;
-
-      case "revival-program":
-        return <ReportingForm />;
-
-      default:
-        return <ReportingTable />;
-    }
-  };
-
   return (
     <div className="reporting">
       <div className="reporting__left" width={4}>
-        <div>
-          <Link to="/dashboard">Main Menu</Link>
+        <div className="reporting__left__top">
+          <Link to="/dashboard" onClick={() => dispatch("reporting")}>
+            Main Menu
+          </Link>
 
-          <p
-            className="reporting__left__heading"
-            onClick={() => dispatch(setReportingScreen("table"))}
+          <Link
+            to="/reporting"
+            className="reporting__left__top__heading"
+            onClick={() => dispatch(setReportingScreen("reporting"))}
           >
             Reporting
-          </p>
+          </Link>
 
-          <div className="reporting__left__link-container">
-            <p
+          <div className="reporting__left__top__link-container">
+            <NavLink
+              to="morning-prayer"
               onClick={() => dispatch(setReportingScreen("morning-prayer"))}
-              className="reporting__left__link-container__link"
             >
               Morning Prayer
-            </p>
-            <p
+            </NavLink>
+            <NavLink
+              to="bible-study"
               onClick={() => dispatch(setReportingScreen("bible-study"))}
-              className="reporting__left__link-container__link"
             >
               Bible Study
-            </p>
-            <p
+            </NavLink>
+            <NavLink
+              to="fellowship"
               onClick={() => dispatch(setReportingScreen("fellowship"))}
-              className="reporting__left__link-container__link"
             >
               Fellowship
-            </p>
-            <p
+            </NavLink>
+            <NavLink
+              to="welcome-program"
               onClick={() => dispatch(setReportingScreen("welcome-program"))}
-              className="reporting__left__link-container__link"
             >
               Welcome Program
-            </p>
-            <p
+            </NavLink>
+            <NavLink
+              to="revival-program"
               onClick={() => dispatch(setReportingScreen("revival-program"))}
-              className="reporting__left__link-container__link"
             >
               Revival program
-            </p>
+            </NavLink>
           </div>
         </div>
 
@@ -131,8 +91,7 @@ const Reporting = () => {
           </p>
           {reportingScreen === "reporting" && <Button>Report an event</Button>}
         </div>
-
-        {renderScreens()}
+        {reportingScreen === "reporting" ? <ReportingTable /> : <Outlet />}
       </div>
     </div>
   );

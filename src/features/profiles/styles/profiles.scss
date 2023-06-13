@@ -27,10 +27,11 @@
 
             &__column {
               // padding: 1rem 0;
-
-              &:hover,
-              &:active {
-                color: $main-blue;
+              a {
+                &:hover,
+                &.active {
+                  color: $main-blue;
+                }
               }
             }
           }

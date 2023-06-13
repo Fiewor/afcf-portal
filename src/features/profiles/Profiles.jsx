@@ -1,88 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { Button, Form, Grid, Sidebar } from "semantic-ui-react";
-import { useSelector } from "react-redux";
-
-import ProfileForm from "./components/ProfileForm.jsx";
-import CampusFellowship from "./components/CampusFellowship.jsx";
+import React from "react";
+import { Grid } from "semantic-ui-react";
+import { Link, Outlet, NavLink } from "react-router-dom";
 
 import "./styles/profiles.scss";
-import { setProfilesScreen } from "./slices/profiles.js";
-import { Link } from "react-router-dom";
-import MembersList from "./components/MembersList.jsx";
-import MembersForm from "./components/MembersForm.jsx";
-import ExcosHistory from "./components/ExcosHistory.jsx";
 
 const Profiles = () => {
-  const dispatch = useDispatch();
-  const profilesScreen = useSelector((state) => state.profiles.profilesScreen);
-  const membersScreen = useSelector((state) => state.profiles.membersScreen);
-
-  const members = [
-    {
-      id: 0,
-      fullName: "Oluwagbemiga Adesoga",
-      number: "08100558935",
-      session: "2022/2023",
-    },
-    {
-      id: 1,
-      fullName: "Okechukwu Philemon",
-      number: "08100558935",
-      session: "2022/2023",
-    },
-    {
-      id: 2,
-      fullName: "Ibrahim Abdul Yahaya",
-      number: "08100558935",
-      session: "2022/2023",
-    },
-    {
-      id: 3,
-      fullName: "Oluwagbemiga Adesoga",
-      number: "08100558935",
-      session: "2022/2023",
-    },
-    {
-      id: 4,
-      fullName: "Okechukwu Philemon",
-      number: "08100558935",
-      session: "2022/2023",
-    },
-    {
-      id: 5,
-      fullName: "Ibrahim Abdul Yahaya",
-      number: "08100558935",
-      session: "2022/2023",
-    },
-  ];
-
-  const renderScreens = () => {
-    switch (profilesScreen) {
-      case "coordinator":
-        return <ProfileForm title="Coordinator" />;
-
-      case "secretary":
-        return <ProfileForm title="Secretary" />;
-
-      case "fellowship":
-        return <CampusFellowship />;
-
-      case "members":
-        return membersScreen === "list" ? (
-          <MembersList members={members} />
-        ) : (
-          <MembersForm />
-        );
-
-      case "excos-history":
-        return <ExcosHistory />;
-
-      default:
-        return <ProfileForm title="Coordinator" />;
-    }
-  };
-
   return (
     <Grid>
       <Grid.Row>
@@ -99,56 +21,41 @@ const Profiles = () => {
 
               <Grid.Row className="upper-row__column__row">
                 <Grid.Column className="upper-row__column__row__column">
-                  <p
-                    onClick={() => dispatch(setProfilesScreen("coordinator"))}
-                    className={`link`}
-                  >
+                  <NavLink to="/profiles/coordinator" className={`link`}>
                     Coordinator
-                  </p>
+                  </NavLink>
                 </Grid.Column>
               </Grid.Row>
 
               <Grid.Row className="upper-row__column__row">
                 <Grid.Column className="upper-row__column__row__column">
-                  <p
-                    onClick={() => dispatch(setProfilesScreen("secretary"))}
-                    className={`link`}
-                  >
+                  <NavLink to="/profiles/secretary" className={`link`}>
                     Secretary
-                  </p>
+                  </NavLink>
                 </Grid.Column>
               </Grid.Row>
 
               <Grid.Row className="upper-row__column__row">
                 <Grid.Column className="upper-row__column__row__column">
-                  <p
-                    onClick={() => dispatch(setProfilesScreen("fellowship"))}
-                    className={`link`}
-                  >
+                  <NavLink to="/profiles/fellowship" className={`link`}>
                     Fellowship
-                  </p>
+                  </NavLink>
                 </Grid.Column>
               </Grid.Row>
 
               <Grid.Row className="upper-row__column__row">
                 <Grid.Column className="upper-row__column__row__column">
-                  <p
-                    onClick={() => dispatch(setProfilesScreen("members"))}
-                    className={`link`}
-                  >
+                  <NavLink to="/profiles/members/list" className={`link`}>
                     Members
-                  </p>
+                  </NavLink>
                 </Grid.Column>
               </Grid.Row>
 
               <Grid.Row className="upper-row__column__row">
                 <Grid.Column className="upper-row__column__row__column">
-                  <p
-                    onClick={() => dispatch(setProfilesScreen("excos-history"))}
-                    className={`link`}
-                  >
+                  <NavLink to="/profiles/excos-history" className={`link`}>
                     Excos History
-                  </p>
+                  </NavLink>
                 </Grid.Column>
               </Grid.Row>
             </Grid.Column>
@@ -173,8 +80,7 @@ const Profiles = () => {
         </Grid.Column>
 
         <Grid.Column width={12}>
-          {/* replace this with nested routing logic */}
-          {renderScreens()}
+          <Outlet />
         </Grid.Column>
       </Grid.Row>
     </Grid>

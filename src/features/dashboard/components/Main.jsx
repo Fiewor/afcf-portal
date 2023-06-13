@@ -52,8 +52,7 @@ const Main = () => {
                 <Grid.Column className="main__side__row__cell">
                   <p>Total Members</p>
                   <p className="main__side__row__cell__sub-text">203</p>
-                  {/* change this to navigate to /profiles/members when it's implemented */}
-                  <Link to="/profiles">See all member list</Link>
+                  <Link to="/profiles/members/list">See all member list</Link>
                 </Grid.Column>
               </Grid.Row>
 

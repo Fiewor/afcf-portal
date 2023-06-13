@@ -1,14 +1,13 @@
 import React from "react";
 import { Button, Icon, Dropdown, Table } from "semantic-ui-react";
-import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-import { setMembersScreen } from "../slices/profiles";
+import { headers } from "../../../common/utils/members";
 
 import "../styles/memberslist.scss";
 
 const MembersList = ({ members }) => {
-  const dispatch = useDispatch();
-  const headers = ["Member name", "Phone number", "Session", "Actions"];
+  const nav = useNavigate();
 
   return (
     <div className="member-container">
@@ -20,7 +19,7 @@ const MembersList = ({ members }) => {
           <Button
             icon
             labelPosition="right"
-            onClick={() => dispatch(setMembersScreen("form"))}
+            onClick={() => nav("/profiles/members/form")}
           >
             Add new student
             <Icon name="plus" />
@@ -56,8 +55,8 @@ const MembersList = ({ members }) => {
       <Table basic="very" className="member-container__table">
         <Table.Header>
           <Table.Row active>
-            {headers.map((header) => (
-              <Table.HeaderCell>{header}</Table.HeaderCell>
+            {headers.map((header, i) => (
+              <Table.HeaderCell key={i}>{header}</Table.HeaderCell>
             ))}
           </Table.Row>
         </Table.Header>
