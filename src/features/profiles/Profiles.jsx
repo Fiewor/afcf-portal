@@ -6,84 +6,54 @@ import "./styles/profiles.scss";
 
 const Profiles = () => {
   return (
-    <Grid>
-      <Grid.Row>
-        <Grid.Column width={4} className="profile-sidebar">
-          <Grid.Row columns={1} className="upper-row">
-            <Grid.Column className="upper-row__column">
-              <Grid.Row className="upper-row__column__row">
-                <Link to="/dashboard">Main Menu</Link>
-              </Grid.Row>
+    <div className="profiles">
+      <div className="profiles__sidebar">
+        <div className="profiles__sidebar__upper">
+          <Link to="/dashboard" className="profiles__sidebar__upper__main">
+            Main Menu
+          </Link>
 
-              <Grid.Row className="upper-row__column__row">
-                <h1>Profiles</h1>
-              </Grid.Row>
+          <h1>Profiles</h1>
 
-              <Grid.Row className="upper-row__column__row">
-                <Grid.Column className="upper-row__column__row__column">
-                  <NavLink to="/profiles/coordinator" className={`link`}>
-                    Coordinator
-                  </NavLink>
-                </Grid.Column>
-              </Grid.Row>
+          <div className="profiles__sidebar__upper__link-container">
+            <NavLink to="/profiles/coordinator" className={`link`}>
+              Coordinator
+            </NavLink>
 
-              <Grid.Row className="upper-row__column__row">
-                <Grid.Column className="upper-row__column__row__column">
-                  <NavLink to="/profiles/secretary" className={`link`}>
-                    Secretary
-                  </NavLink>
-                </Grid.Column>
-              </Grid.Row>
+            <NavLink to="/profiles/secretary" className={`link`}>
+              Secretary
+            </NavLink>
 
-              <Grid.Row className="upper-row__column__row">
-                <Grid.Column className="upper-row__column__row__column">
-                  <NavLink to="/profiles/fellowship" className={`link`}>
-                    Fellowship
-                  </NavLink>
-                </Grid.Column>
-              </Grid.Row>
+            <NavLink to="/profiles/fellowship" className={`link`}>
+              Fellowship
+            </NavLink>
 
-              <Grid.Row className="upper-row__column__row">
-                <Grid.Column className="upper-row__column__row__column">
-                  <NavLink to="/profiles/members/list" className={`link`}>
-                    Members
-                  </NavLink>
-                </Grid.Column>
-              </Grid.Row>
+            <NavLink to="/profiles/members/list" className={`link`}>
+              Members
+            </NavLink>
 
-              <Grid.Row className="upper-row__column__row">
-                <Grid.Column className="upper-row__column__row__column">
-                  <NavLink to="/profiles/excos-history" className={`link`}>
-                    Excos History
-                  </NavLink>
-                </Grid.Column>
-              </Grid.Row>
-            </Grid.Column>
-          </Grid.Row>
+            <NavLink to="/profiles/excos-history" className={`link`}>
+              Excos History
+            </NavLink>
+          </div>
+        </div>
 
-          <Grid.Row columns="equal" className="bottom-row">
-            <Grid.Column>
-              <div className="circle"></div>
-            </Grid.Column>
+        <div className="profiles__sidebar__bottom">
+          <div className="circle"></div>
 
-            <Grid.Column>
-              <Grid.Row>
-                <p className="text">AFCF Unilag</p>
-              </Grid.Row>
-              <Grid.Row>
-                <p className="sub-text">Campus Fellowship</p>
-              </Grid.Row>
-            </Grid.Column>
+          <div>
+            <p className="text">AFCF Unilag</p>
+            <p className="sub-text">Campus Fellowship</p>
+          </div>
 
-            <Grid.Column>{/* add dropdown here */}</Grid.Column>
-          </Grid.Row>
-        </Grid.Column>
+          <div>{/* add dropdown here */}</div>
+        </div>
+      </div>
 
-        <Grid.Column width={12}>
-          <Outlet />
-        </Grid.Column>
-      </Grid.Row>
-    </Grid>
+      <div className="profiles__main">
+        <Outlet />
+      </div>
+    </div>
   );
 };
 

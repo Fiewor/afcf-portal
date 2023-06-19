@@ -16,7 +16,6 @@
 // ---------------------
 
 .member-container {
-  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -74,14 +73,40 @@
   }
 
   &__bottom {
-    .ui.button {
-      background: transparent;
-      border: 1px solid #afafaf;
-      border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
 
-      &:last-child {
+    .ui.button {
+      padding: 1rem 2rem;
+      &:first-of-type {
+        background: $main-blue;
+        color: #fff;
+
+        &:hover {
+          background: #66b5c4;
+        }
+
+        &:active {
+          background: transparent;
+          border: 1px solid $main-blue;
+          color: $main-blue;
+        }
+      }
+
+      &:last-of-type {
+        background: transparent;
         border: 1px solid $main-blue;
         color: $main-blue;
+
+        &:hover {
+          background: #d5f0f5;
+        }
+
+        &:active {
+          background: $main-blue;
+          color: #fff;
+        }
       }
     }
   }

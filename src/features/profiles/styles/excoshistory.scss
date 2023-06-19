@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 2rem;
 
   &__header {
     font-weight: 700;
@@ -15,38 +14,56 @@
     border-radius: 2px;
     padding: 2rem;
 
-    &__button-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-
-      .ui.button:first-of-type {
-        background: $main-blue;
-        color: #fff;
-
-        &:hover {
-          background: $light-blue;
-        }
-
-        &:active {
-          background: transparent;
-          border: 1px solid $main-blue;
-          color: $main-blue;
-        }
+    &__container {
+      width: 50%;
+      &__group {
+        padding: 0.5rem 0;
+        display: flex;
+        justify-content: space-between;
       }
 
-      .ui.button:last-of-type {
-        background: transparent;
-        border: 1px solid $main-blue;
-        color: $main-blue;
+      &__item {
+        padding: 0.5rem 0;
+      }
 
-        &:hover {
-          background: #d5f0f5;
-        }
+      &__button-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 2rem 0;
 
-        &:active {
-          background: $main-blue;
-          color: #fff;
+        .ui.button {
+          padding: 1rem 2rem;
+
+          &:first-of-type {
+            background: $main-blue;
+            color: #fff;
+
+            &:hover {
+              background: $light-blue;
+            }
+
+            &:active {
+              background: transparent;
+              border: 1px solid $main-blue;
+              color: $main-blue;
+            }
+          }
+
+          &:last-of-type {
+            background: transparent;
+            border: 1px solid $main-blue;
+            color: $main-blue;
+
+            &:hover {
+              background: #d5f0f5;
+            }
+
+            &:active {
+              background: $main-blue;
+              color: #fff;
+            }
+          }
         }
       }
     }

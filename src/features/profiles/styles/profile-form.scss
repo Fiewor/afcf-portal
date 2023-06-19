@@ -1,0 +1,21 @@
+.profile-main {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  &__form {
+    padding: 2rem 0;
+
+    &__group {
+      padding: 0.5rem 0;
+    }
+
+    &__bottom {
+      display: flex;
+      gap: 2rem;
+    }
+  }
+}

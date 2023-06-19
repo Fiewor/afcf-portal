@@ -30,11 +30,8 @@ const AppRoutes = () => {
             path="coordinator"
             element={<ProfileForm title="Coordinator" />}
           />
-          <Route
-            path="fellowship"
-            element={<ProfileForm title="Secretary" />}
-          />
-          <Route path="secretary" element={<CampusFellowship />} />
+          <Route path="secretary" element={<ProfileForm title="Secretary" />} />
+          <Route path="fellowship" element={<CampusFellowship />} />
           <Route
             path="members/list"
             element={<MembersList members={members} />}

@@ -40,33 +40,35 @@
         gap: 2rem;
         flex-wrap: wrap;
 
-        .ui.button:first-of-type {
-          background: $main-blue;
-          color: #fff;
+        .ui.button {
+          &:first-of-type {
+            background: $main-blue;
+            color: #fff;
 
-          &:hover {
-            background: #66b5c4;
+            &:hover {
+              background: #66b5c4;
+            }
+
+            &:active {
+              background: transparent;
+              border: 1px solid $main-blue;
+              color: $main-blue;
+            }
           }
 
-          &:active {
+          &:last-of-type {
             background: transparent;
             border: 1px solid $main-blue;
             color: $main-blue;
-          }
-        }
 
-        .ui.button:last-of-type {
-          background: transparent;
-          border: 1px solid $main-blue;
-          color: $main-blue;
+            &:hover {
+              background: #d5f0f5;
+            }
 
-          &:hover {
-            background: #d5f0f5;
-          }
-
-          &:active {
-            background: $main-blue;
-            color: #fff;
+            &:active {
+              background: $main-blue;
+              color: #fff;
+            }
           }
         }
       }
